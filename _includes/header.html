@@ -1,43 +1,46 @@
-<header>
-
-<!-- navbar -->
-  <nav class="navbar navbar-inverse">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
-      <p class="navbar-text">Front-end Dev Engineer</p>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-
-        {% if page.url == "/index.html" %}
-          <li class="active">
-          {% else %}
-          <li>
+<div class="header-wrapper">
+    <header>
+        <!-- logo and description -->
+        {% if page.layout != "post" %}
+        <div class="head-area">
+            <h1 class="site-logo">
+                <a href="/"><img src="/assets/img/logo.png" class="logo"/></a>
+            </h1>
+            <h3 class="site-description">{{ site.description }}</h3>
+        </div>
         {% endif %}
-          <a href="{{ site.baseurl }}/"><span class="glyphicon glyphicon-th-large"></span> Blog</a></li>
+        <nav class="site-nav">
+            <div class="left-nav">
+                <!-- add titles to all buttons -->
+                <div class="ui secondary menu inverted">
+                    <a class="item" href="/">
+                        Home
+                    </a>
+                    <a class="item" href="/about.html">
+                        About
+                    </a>
+                    <a class="item" href="/archive.html">
+                        Archive
+                    </a>
+                    <div class="right menu">
+                        <div id="head-search" class="ui category search item">
+                            <div class="ui transparent icon input">
+                                <input placeholder="Search..." type="text" id="search-input" onkeypress="handleKeyPress()">
+                                <i class="search link icon" onclick="handleSubmit()"></i>
+                            </div>
+                        </div>
 
-        {% for p in site.pages %}
-          {% if p.title %}
-            {% if p.url == page.url %}
-              <li class="active">
-              {% else %}
-              <li>
-            {% endif %}
-            <a href="{{ p.url | prepend: site.baseurl }}"><span class="glyphicon {{ p.icon }}"></span> {{ p.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-</header>
+                        <a class="item" href="http://stallman.org/facebook.html">
+                            <i class="facebook link icon"></i>
+                        </a>
+                        <a class="item" href="https://github.com/abhn">
+                            <i class="github link icon"></i>
+                        </a>
+                        <a class="item" href="/feed.xml">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="right-nav"></div>
+        </nav>
+    </header>
+</div>

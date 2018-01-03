@@ -1,21 +1,10 @@
-﻿# Site settings
-title: 
-email: jiyangtian@qq.com description: 老季的自留地
-# > # this means to ignore newlines until "baseurl:"
-#   Write an awesome description for your new site here. You can edit this
-#   line in _config.yml. It will appear in your document head meta (for
-#   Google search results) and in your feed.xml site description.
+title : Wall-E - Jekyll
+description: 'A Modern Jekyll Theme'
 
-# baseurl: "" # the subpath of your site, e.g. /blog/
-# url: "http://yourdomain.com" # the base hostname & protocol for your site
-# twitter_username:  jekyllrb
-github_username:  Jiyangtianmalink: /:year/:month/:day/:title/
-
-# Build settings
 markdown: kramdown
-
-# highlight
-# 本地用rouge, github上用pygments
-# highlighter: pygments
-# highlighter: rouge
-# highlighter: false
+highlighter: rouge
+logo: false
+paginate: 15
+baseurl: /
+plugins: [jekyll-gist]
+permalink: /:year/:month/:title.html
